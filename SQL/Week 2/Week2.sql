@@ -188,6 +188,13 @@ INSERT INTO BOMON VALUES
 ('VLUD', N'Vật lý ứng dụng', 'B24', '0838454545', '005', 'VL', '2006-02-18'),
 ('VS', N'Vi sinh', 'B32', '0838909090', '004', 'SH', '2007-01-01');
 
+-- Constraint 
+ALTER TABLE GIAOVIEN ADD CONSTRAINT C_PHAI
+CHECK(PHAI IN(N'Nam', N'Nữ'))
+
+ALTER TABLE THAMGIADT ADD CONSTRAINT C_KETQUA
+CHECK(KETQUA IN(N'Đạt'))
+
 update giaovien
 set mabm = 'MMT'
 where magv = '001'
